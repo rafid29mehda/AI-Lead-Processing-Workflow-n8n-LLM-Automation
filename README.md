@@ -4,6 +4,9 @@
 
 This project is an end-to-end AI-driven lead processing system built entirely within **n8n** using native workflow nodes. A lead arrives through a webhook (via an HTML form or API call), gets classified by a locally-hosted LLM, has key fields extracted, gets stored in a PostgreSQL database, and receives an AI-generated email response — all automatically, with zero manual intervention.
 
+<img width="2274" height="956" alt="Workflow SS" src="https://github.com/user-attachments/assets/b595d25f-7e21-446a-a421-7d6048736eab" />
+
+
 **Tech Stack:** n8n (self-hosted via Docker) · Ollama + Llama 3.2 (local LLM) · Neon PostgreSQL · Gmail OAuth2 · HTML form (web interface)
 
 **Architecture — 17 nodes:**
