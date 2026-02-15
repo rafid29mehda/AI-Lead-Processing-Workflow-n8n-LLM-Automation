@@ -1,0 +1,44 @@
+{
+  "name": "Lead Processing - Error Handler",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "err-trigger-001",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            { "id": "e1", "name": "timestamp", "value": "={{ $now.toISO() }}", "type": "string" },
+            { "id": "e2", "name": "workflowName", "value": "={{ $json.workflow.name }}", "type": "string" },
+            { "id": "e3", "name": "failedNode", "value": "={{ $json.execution.error.node.name }}", "type": "string" },
+            { "id": "e4", "name": "errorMessage", "value": "={{ $json.execution.error.message }}", "type": "string" },
+            { "id": "e5", "name": "executionId", "value": "={{ $json.execution.id }}", "type": "string" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "err-log-001",
+      "name": "Format Error Log",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [480, 300]
+    }
+  ],
+  "connections": {
+    "Error Trigger": {
+      "main": [[{ "node": "Format Error Log", "type": "main", "index": 0 }]]
+    }
+  },
+  "pinData": {},
+  "settings": { "executionOrder": "v1" },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1
+}
