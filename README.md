@@ -59,5 +59,4 @@ The workflow implements error handling at three levels. At the **node level**, a
 | `error-handler-workflow.json` | Error handler workflow |
 | `lead-form.html` | HTML form for submitting leads via browser |
 | `README.md` | This document |
-| `Demo Video.mp4` | Live Workflow Execution |
 
