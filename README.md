@@ -51,7 +51,7 @@ The workflow implements error handling at three levels. At the **node level**, a
 
 ---
 
-## Submission Files
+## Files
 
 | File | Description |
 |------|-------------|
